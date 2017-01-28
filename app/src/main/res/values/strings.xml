@@ -1,0 +1,5 @@
+<resources>
+  <string name="app_name">WeatherApp</string>
+
+  <string name="cel">38\u00B0</string>
+</resources>
