@@ -3,17 +3,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tool="http://schemas.android.com/tools"
     android:id="@+id/toolbar"
-    app:theme="@style/CustomActionBar"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    app:theme="@style/CustomActionBar"
     >
 
   <TextView
-      android:textColor="@android:color/white"
-      tool:text="Tel Aviv"
-      android:gravity="center"
       android:layout_width="match_parent"
       android:layout_height="match_parent"
+      android:gravity="center"
+      android:textColor="@android:color/white"
+      tool:text="Tel Aviv"
       />
 
 </android.support.v7.widget.Toolbar>

@@ -20,12 +20,12 @@
     <item name="windowActionBarOverlay">true</item>
   </style>
 
-  <style name="WeatherTextTemp" >
+  <style name="WeatherTextTemp">
     <item name="android:textColor">@android:color/white</item>
     <item name="android:textSize">80dp</item>
   </style>
 
-  <style name="WeatherTextSub" parent="WeatherTextTemp"  >
+  <style name="WeatherTextSub" parent="WeatherTextTemp">
     <item name="android:textSize">40dp</item>
   </style>
 </resources>
