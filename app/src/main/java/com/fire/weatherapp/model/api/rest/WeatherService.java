@@ -1,9 +1,10 @@
 package com.fire.weatherapp.model.api.rest;
 
-import android.database.Observable;
-import com.fire.weatherapp.model.api.entity.WeatherResponse;
+import com.fire.weatherapp.model.api.pojo.ForecastResponse;
+import com.fire.weatherapp.model.api.pojo.WeatherResponse;
 import retrofit2.http.GET;
 import retrofit2.http.Query;
+import rx.Observable;
 
 /**
  * Created by idan on 28/01/2017.
@@ -20,12 +21,12 @@ public interface WeatherService {
    * @param lang en
    * @return WeatherResponse object
    */
-  @GET("forecast?") Observable<WeatherResponse> getForcast(
+  @GET("forecast/daily?") Observable<ForecastResponse> getForecast(
       @Query("lat") double lat,
       @Query("lon") double lon,
+      @Query("cnt") Integer daysNumber,
       @Query("appid") String appId,
-      @Query("units") String units,
-      @Query("lang") String lang);
+      @Query("units") String units);
 
   /**
    * Gets today's forecast weather

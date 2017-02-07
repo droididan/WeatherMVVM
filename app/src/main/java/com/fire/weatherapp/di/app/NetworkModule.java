@@ -18,15 +18,15 @@ import retrofit2.converter.gson.GsonConverterFactory;
  */
 
 @Module public class NetworkModule {
+
   @Provides @Singleton HttpLoggingInterceptor provideHttpInterceptro() {
     HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
     interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
     return interceptor;
   }
 
-  @Provides @Singleton OkHttpClient provideOkHttpClinet(HttpLoggingInterceptor interceptor){
-    return new OkHttpClient.Builder()
-        .connectTimeout(1, TimeUnit.MINUTES)
+  @Provides @Singleton OkHttpClient provideOkHttpClinet(HttpLoggingInterceptor interceptor) {
+    return new OkHttpClient.Builder().connectTimeout(1, TimeUnit.MINUTES)
         .readTimeout(1, TimeUnit.MINUTES)
         .addInterceptor(interceptor)
         .build();

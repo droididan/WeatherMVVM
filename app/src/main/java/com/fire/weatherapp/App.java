@@ -25,4 +25,8 @@ public class App extends Application {
         .networkModule(new NetworkModule())
         .build();
   }
+
+  public AppComponent getAppComponent() {
+    return appComponent;
+  }
 }

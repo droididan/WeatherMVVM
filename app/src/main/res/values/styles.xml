@@ -4,6 +4,7 @@
   <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
     <!-- Customize your theme here. -->
     <item name="colorPrimary">@color/colorPrimary</item>
+    `
     <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
     <item name="colorAccent">@color/colorAccent</item>
   </style>
@@ -20,12 +21,18 @@
     <item name="windowActionBarOverlay">true</item>
   </style>
 
-  <style name="WeatherTextTemp">
+  <style name="WeatherTextBig">
     <item name="android:textColor">@android:color/white</item>
     <item name="android:textSize">80dp</item>
   </style>
 
-  <style name="WeatherTextSub" parent="WeatherTextTemp">
-    <item name="android:textSize">40dp</item>
+  <style name="WeatherSubDetail">
+    <item name="android:textColor">@android:color/white</item>
+    <item name="android:textSize">65dp</item>
+  </style>
+
+
+  <style name="WeatherTextSub" parent="WeatherTextBig">
+    <item name="android:textSize">20dp</item>
   </style>
 </resources>

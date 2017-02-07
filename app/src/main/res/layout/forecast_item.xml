@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+  <data>
+    <variable
+        name="viewModel"
+        type="com.fire.weatherapp.viewmodel.forecast.ItemForecastViewModel"
+        />
+  </data>
+
+  <LinearLayout
+      xmlns:android="http://schemas.android.com/apk/res/android"
+      android:id="@+id/list_item_forecast"
+      android:layout_width="match_parent"
+      android:layout_height="80dp"
+      android:minHeight="?android:attr/listPreferredItemHeight"
+      android:orientation="horizontal"
+      android:padding="10dp"
+      >
+
+
+    <RelativeLayout
+        android:id="@+id/forecastItem"
+        android:layout_width="match_parent"
+        android:layout_height="125dp"
+        android:layout_margin="5dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        >
+
+      <LinearLayout
+          android:id="@+id/forecastItemTable"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_toRightOf="@+id/forecastItemIcon"
+          android:orientation="vertical"
+          android:padding="14dp"
+          >
+
+        <com.onurciner.fontchange.FTextView
+            android:id="@+id/forecastItemDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text='@{viewModel.date}'
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/abc_text_size_subhead_material"
+            app:xfontFamily="Caviar_Dreams"
+            />
+
+        <com.onurciner.fontchange.FTextView
+            android:id="@+id/forecastItemDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:padding="10dp"
+            android:text='@{viewModel.desc}'
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/abc_text_size_subhead_material"
+            app:xfontFamily="Caviar_Dreams"
+            />
+      </LinearLayout>
+
+      <LinearLayout
+          android:id="@+id/forecastItemTemperature"
+          android:layout_width="wrap_content"
+          android:layout_height="match_parent"
+          android:layout_alignParentRight="true"
+          android:layout_centerVertical="true"
+          android:gravity="right|center_horizontal"
+          android:orientation="vertical"
+
+          >
+
+        <com.onurciner.fontchange.FTextView
+            android:id="@+id/forecastItemTemperatureMax"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:padding="10dp"
+            android:text='@{viewModel.temp}'
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/notification_action_icon_size"
+            app:xfontFamily="Caviar_Dreams"
+            app:xfontStyle="bold"
+            />
+
+      </LinearLayout>
+      <ImageView
+          android:id="@+id/forecastItemIcon"
+          android:layout_width="100dp"
+          android:layout_height="100dp"
+          android:layout_alignBottom="@+id/forecastItemTable"
+          android:layout_alignParentLeft="true"
+          android:layout_alignParentStart="true"
+          android:background='@{viewModel.image}'
+          android:padding="10dp"
+          android:tint="@android:color/white"
+          />
+    </RelativeLayout>
+  </LinearLayout>
+
+</layout>

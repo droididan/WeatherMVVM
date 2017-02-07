@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+  <data>
+    <variable
+        name="viewModel"
+        type="com.fire.weatherapp.viewmodel.weather.WeatherViewModel"
+        />
+  </data>
+  <RelativeLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:background="@drawable/ic_background_weather"
+      >
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?android:actionBarSize"
+        android:layout_marginTop="30dp"
+        >
+
+      <com.onurciner.fontchange.FTextView
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:gravity="center"
+          android:text="@string/today_s"
+          android:textColor="@android:color/white"
+          android:textSize="27sp"
+          app:xfontFamily="Caviar_Dreams"
+          />
+
+    </android.support.v7.widget.Toolbar>
+
+    <com.onurciner.fontchange.FTextView
+        android:id="@+id/temp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="30dp"
+        android:layout_marginLeft="42dp"
+        android:layout_marginStart="42dp"
+        android:text='@{viewModel.temp ?? "Loading..."}'
+        app:xfontFamily="Neuropol"
+        app:xfontStyle="bold"
+        style="@style/WeatherTextBig"
+        />
+
+    <com.onurciner.fontchange.FTextView
+        android:id="@+id/humidity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/temp"
+        android:layout_alignLeft="@+id/temp"
+        android:layout_alignStart="@+id/temp"
+        android:text='@{viewModel.humidity}'
+        app:xfontFamily="Caviar_Dreams"
+        style="@style/WeatherTextSub"
+        />
+
+    <com.onurciner.fontchange.FTextView
+        android:id="@+id/desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10dp"
+        android:layout_toEndOf="@+id/humidity"
+        android:layout_toRightOf="@+id/humidity"
+        android:text='@{viewModel.desc}'
+        app:xfontFamily="Caviar_Dreams"
+        style="@style/WeatherTextSub"
+        />
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:visibility='@{viewModel.isLoading}'
+        style="?android:attr/progressBarStyle"
+        />
+    <com.onurciner.fontchange.FTextView
+
+        android:id="@+id/city"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@{viewModel.city}"
+        android:textSize="14sp"
+        app:xfontFamily="Caviar_Dreams"
+        app:xfontStyle="bold"
+        style="@style/WeatherSubDetail"
+        android:layout_below="@+id/toolbar"
+        android:layout_centerHorizontal="true"
+        />
+
+  </RelativeLayout>
+</layout>
