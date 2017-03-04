@@ -6,19 +6,24 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import com.fire.weatherapp.App;
 import com.fire.weatherapp.R;
+import com.fire.weatherapp.common.WeatherBus;
 import com.fire.weatherapp.databinding.ActivityMainBinding;
 import com.fire.weatherapp.di.main.DaggerMainComponent;
 import com.fire.weatherapp.di.main.MainModule;
 import com.fire.weatherapp.view.forecast.ForecastFragment;
 import com.fire.weatherapp.view.weather.WeatherFragment;
 import com.fire.weatherapp.viewmodel.main.MainViewModel;
+import com.google.android.gms.common.api.GoogleApiClient;
 import javax.inject.Inject;
 
 public class MainActivity extends AppCompatActivity implements MainViewModel.MainListener {
 
   @Inject MainViewModel mainViewModel;
+
+  @Inject GoogleApiClient client;
+
+
   ActivityMainBinding binding;
-  private int pos;
 
   @Override protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);

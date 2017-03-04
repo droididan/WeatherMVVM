@@ -5,9 +5,13 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import com.fire.weatherapp.common.WeatherBus;
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.location.LocationServices;
 import com.google.gson.Gson;
 import dagger.Module;
 import dagger.Provides;
+import dagger.Subcomponent;
+import dagger.producers.Produces;
 import javax.inject.Singleton;
 
 /**
@@ -40,4 +44,8 @@ import javax.inject.Singleton;
   @Provides @Singleton SharedPreferences provideSharedPreferences(Application application) {
     return PreferenceManager.getDefaultSharedPreferences(application);
   }
+
+  //@Provides @Singleton GoogleApiClient providesGoogleApiClient(Context context) {
+  //  return new GoogleApiClient.Builder(context).addApi(LocationServices.API).build();
+  //}
 }

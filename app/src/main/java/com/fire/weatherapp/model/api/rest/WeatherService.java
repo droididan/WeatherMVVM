@@ -18,7 +18,7 @@ public interface WeatherService {
    * @param lon longitude
    * @param appId token
    * @param units metric
-   * @param lang en
+
    * @return WeatherResponse object
    */
   @GET("forecast/daily?") Observable<ForecastResponse> getForecast(

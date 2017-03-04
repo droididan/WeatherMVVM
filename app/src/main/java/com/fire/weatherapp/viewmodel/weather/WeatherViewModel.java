@@ -29,7 +29,9 @@ public class WeatherViewModel {
     city = new ObservableField<>();
 
     PublishSubject<Coord> publishSubject = PublishSubject.create();
-    publishSubject.doOnNext(response -> isLoading.set(View.VISIBLE))
+
+    publishSubject
+        .doOnNext(response -> isLoading.set(View.VISIBLE))
         .flatMap(useCase::getWeather)
         .doOnNext(response -> isLoading.set(View.GONE))
         .subscribe(new Observer<WeatherResponse>() {
@@ -50,6 +52,6 @@ public class WeatherViewModel {
         });
 
     // the coord should come from main activity with location services.
-    publishSubject.onNext(new Coord(32.2, 34.2));
+    publishSubject.onNext(new Coord(34.2, 32.2));
   }
 }

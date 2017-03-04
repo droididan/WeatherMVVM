@@ -14,11 +14,9 @@ import rx.subjects.PublishSubject;
  */
 
 public class ForecastViewModel {
-
   @Inject public ForecastViewModel(ForecastUseCase useCase, ForecastListener listener) {
-
     PublishSubject<Coord> publishSubject = PublishSubject.create();
-    ObservableField<Integer> isLoading = new ObservableField<>(View.GONE);
+    ObservableField<Integer> isLoading = new ObservableField<>();
 
     publishSubject.doOnNext(response -> isLoading.set(View.VISIBLE))
         .flatMap(useCase::getForecast)
@@ -27,7 +25,7 @@ public class ForecastViewModel {
         .subscribe(listener::onForecastReady);
 
 
-    publishSubject.onNext(new Coord(32.2, 34.2));
+    publishSubject.onNext(new Coord(34.2, 32.2));
   }
 
   public interface ForecastListener {

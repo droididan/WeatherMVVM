@@ -2,6 +2,7 @@ package com.fire.weatherapp.di.main;
 
 import com.fire.weatherapp.di.app.AppComponent;
 import com.fire.weatherapp.di.scopes.Activity;
+import com.fire.weatherapp.view.forecast.ForecastFragment;
 import com.fire.weatherapp.view.main.MainActivity;
 import dagger.Component;
 
